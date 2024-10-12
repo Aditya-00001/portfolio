@@ -1,0 +1,177 @@
+/* General container settings */
+.special {
+    min-height: 100%; /* Ensures it takes up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensures no overflow of content */
+}
+
+/* Centering the hero description text */
+.hero-text {
+    text-align: center;
+    margin-top: 20px;
+    flex-grow: 1; /* Ensures it takes available space */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-out forwards; /* Apply the welcome transition */
+}
+
+.hero-text p.description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    animation: slideUp 1s ease-in-out forwards; /* Adds a sliding up effect */
+}
+
+/* Welcome Transition - Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Text Slide Up Animation */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px); /* Starts from below */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Ends at normal position */
+        opacity: 1;
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    flex-grow: 1; /* Fills up remaining space */
+    margin-top: 20px; /* Space between description and skills */
+    margin-bottom: 10px; /* Keeps distance from footer */
+}
+
+.skills-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards 1s; /* Delayed fade-in for the heading */
+}
+
+/* Skill Card Fade-in and Staggered Animation */
+.skill-card {
+    margin-bottom: 20px; /* Adds space between cards */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start below its position */
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: calc(0.2s * var(--card-index)); /* Staggered animation delay */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Starts from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+.skill-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: #007bff;
+}
+
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+    .hero-text p.description {
+        font-size: 1.2rem;
+    }
+
+    .skill-card {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* General page settings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Animation */
+nav.navbar {
+    opacity: 0;
+    transform: translateY(-50px); /* Start from above */
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start from above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+/* Section Animation */
+.container-fluid {
+    opacity: 0;
+    transform: translateY(50px); /* Start from below */
+    animation: fadeInUp 1s ease-out forwards 0.5s; /* Delayed animation */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+/* Footer Animation */
+footer {
+    opacity: 0;
+    transform: translateY(50px); /* Start from below */
+    animation: fadeInUp 1s ease-out forwards 1.5s; /* Delayed to appear after content */
+    padding:0;
+    margin-top:30px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+header{
+margin-top:10px;
+margin-bottom:20px;
+}
+
+.square-image {
+    width: 150px;  /* Set the width to a fixed value */
+    height: 150px; /* Set the height to the same value to maintain a square shape */
+    object-fit: cover; /* This ensures that the image fills the square without distortion */
+}
+

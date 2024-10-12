@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block section %}
+<div class="container-fluid special d-flex flex-column">
+    <!-- Centered Description Section -->
+    <section class="hero-text text-center flex-grow-1">
+        <p class="description">
+            My name is Aditya Narayan Jena, a third-year student based in Bhubaneswar, Odisha, India.
+            I am a student with research potential, and I have completed several projects.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section flex-grow-1">
+        <h2 class="text-center position-relative">
+        <hr class="hr-line-left">
+        Skills Acquired
+        <hr class="hr-line-right">
+        </h2>
+
+        <div class="row justify-content-center">
+            {% for skill in skills %}
+            <div class="col-md-4" style="--card-index: {{ loop.index0 }}">
+                <div class="card skill-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ skill }}</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %} Project {%endblock%}
+
+{%block section%}
+
+<div class="container text-center mt-5">
+    <h2 class="projects-title">Projects</h2>
+    <div class="row mt-4">
+        {% for project in projects %}
+        <div class="col-12 mb-3">  <!-- Full width for the card -->
+            <div class="card h-100 d-flex flex-row"> <!-- Added d-flex and flex-row for horizontal layout -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+
+                    <!-- Conditional link display -->
+                    {% if project.link %}
+                    <a href="{{ project.link }}" class="btn btn-primary" target="_blank">View Project</a>
+                    {% endif %}
+
+                    <!-- Skills section -->
+                    <div class="mt-3">
+                        <strong>Skills:</strong>
+                        <ul class="list-inline">
+                            {% for skill in project.skills %}
+                            <li class="list-inline-item">{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <img src="{{ project.image }}" class="card-img-right" alt="{{ project.title }}" style="max-width: 150px; height: auto;">  <!-- Image with optimized size -->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h2 class="projects-title">More Coming soon......</h2>
+</div>
+
+
+
+
+{%endblock%}
