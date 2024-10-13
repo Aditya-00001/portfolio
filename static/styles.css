@@ -145,33 +145,95 @@ nav.navbar {
     }
 }
 
-/* Footer Animation */
-footer {
+/* Fade-in Animation */
+.fade-in {
     opacity: 0;
-    transform: translateY(50px); /* Start from below */
-    animation: fadeInUp 1s ease-out forwards 1.5s; /* Delayed to appear after content */
-    padding:0;
-    margin-top:30px;
+    animation: fadeInSmooth 1.5s ease-in-out forwards;
 }
 
-@keyframes fadeInUp {
+/* Smooth fade-in keyframes */
+@keyframes fadeInSmooth {
     0% {
         opacity: 0;
-        transform: translateY(50px); /* Start from below */
+        transform: translateY(20px); /* Small vertical movement for a smooth effect */
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Ends at normal position */
+        transform: translateY(0);
     }
 }
-header{
-margin-top:10px;
-margin-bottom:20px;
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.square-image {
-    width: 150px;  /* Set the width to a fixed value */
-    height: 150px; /* Set the height to the same value to maintain a square shape */
-    object-fit: cover; /* This ensures that the image fills the square without distortion */
+/* Hover scaling effect on skill cards */
+.scale-on-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
+
+/* Text pulse effect for skill titles */
+.text-animate {
+    position: relative;
+    animation: textPulse 2s infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% { color: #007bff; }
+    50% { color: #ff6b6b; }
+}
+
+
+/* Skills Section */
+.skills-section {
+    padding: 2rem 0;
+    background-color: #2e3047; /* Dark background similar to the image */
+    color: #fff;
+}
+
+/* Skill Icons */
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+/* Skill Cards */
+.skill-card {
+    background-color: #393b56; /* Card background color */
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.skill-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Horizontal Line */
+.hr-line {
+    width: 50%;
+    margin: 0 auto;
+    border: 0;
+    border-top: 2px solid #fff;
+    margin-bottom: 2rem;
+}
+.skill-icon {
+    font-size: 64px; /* Adjust size */
+    color: #fff; /* Change icon color to white */
+    margin-bottom: 10px;
+}
+
 
