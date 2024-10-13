@@ -36,7 +36,12 @@ def project():
         {
             'title': ' Robust biometric attendance system via content-based '
                      'feature extraction and classification of acknowledged sound',
-            'description': 'This is a description of project 1.',
+            'description': 'Biometric attendance systems have simplified tracking but still present challenges, 
+            such as users not being assured their attendance is recorded. A novel method using machine learning addresses
+            this by analyzing thank-you sounds from biometric devices. The system applies signal processing techniques like 
+            Mel-frequency cepstral coefficients (MFCC) and Mel spectrograms to distinguish genuine acknowledgments from noise. 
+            This scalable and versatile solution integrates seamlessly with existing systems, automating attendance tracking
+            while providing users with confirmation that their attendance has been recorded.',
             'link': None,  # This project has a link
             'image': url_for('static',filename='projects/attendance.png'),  # Replace with actual image URL
             'skills': ['Python', 'App Development','Machine Learning']  # Add skills related to the project
