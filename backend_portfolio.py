@@ -43,7 +43,7 @@ def project():
         },
         {
             'title': 'Instagram Automation',
-            'description': 'n the dynamic world of social media, maintaining an active presence on platforms like '
+            'description': 'In the dynamic world of social media, maintaining an active presence on platforms like '
                            'Instagram can be a daunting task. To address this challenge, I developed an Instagram '
                            'Automation Tool that leverages Python and Selenium to automate key interactions, '
                            'enabling users to focus on what truly matters—creating engaging content.',
