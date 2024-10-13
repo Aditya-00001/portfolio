@@ -1,15 +1,18 @@
 {% extends 'layout.html' %}
 
-{% block title %} Project {%endblock%}
+{% block title %} Projects {% endblock %}
 
-{%block section%}
+{% block section %}
 
 <div class="container text-center mt-5">
     <h2 class="projects-title">Projects</h2>
     <div class="row mt-4">
         {% for project in projects %}
-        <div class="col-12 mb-3">  <!-- Full width for the card -->
-            <div class="card h-100 d-flex flex-row"> <!-- Added d-flex and flex-row for horizontal layout -->
+        <div class="col-12 col-md-6 col-lg-4 mb-3">  <!-- Responsive columns for different screen sizes -->
+            <div class="card h-100 d-flex flex-column"> <!-- Use flex-column for better vertical layout -->
+                <div class="card-img-top square-box">
+                    <i class="{{ project.icon }}" style="font-size: 100px; color: #007bff;"></i>  <!-- Icon instead of image -->
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ project.title }}</h5>
                     <p class="card-text">{{ project.description }}</p>
@@ -29,15 +32,11 @@
                         </ul>
                     </div>
                 </div>
-                <img src="{{ project.image }}" class="card-img-right" alt="{{ project.title }}" style="max-width: 150px; height: auto;">  <!-- Image with optimized size -->
             </div>
         </div>
         {% endfor %}
     </div>
-    <h2 class="projects-title">More Coming soon......</h2>
+    <h2 class="projects-title mt-5">More Coming Soon...</h2>
 </div>
 
-
-
-
-{%endblock%}
+{% endblock %}
