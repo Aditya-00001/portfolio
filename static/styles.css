@@ -23,6 +23,31 @@
     margin: auto;
     animation: slideUp 1s ease-in-out forwards; /* Adds a sliding up effect */
 }
+/* General container settings */
+.special {
+    min-height: 100%; /* Ensures it takes up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensures no overflow of content */
+}
+
+/* Centering the hero description text */
+.hero-text {
+    text-align: center;
+    margin-top: 20px;
+    flex-grow: 1; /* Ensures it takes available space */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-out forwards; /* Apply the welcome transition */
+}
+
+.hero-text p.description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    animation: slideUp 1s ease-in-out forwards; /* Adds a sliding up effect */
+}
 
 /* Welcome Transition - Fade In */
 @keyframes fadeIn {
@@ -237,3 +262,543 @@ nav.navbar {
 }
 
 
+/* General container settings */
+.special {
+    min-height: 100%; /* Ensures it takes up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensures no overflow of content */
+}
+
+/* Centering the hero description text */
+.hero-text {
+    text-align: center;
+    margin-top: 20px;
+    flex-grow: 1; /* Ensures it takes available space */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-out forwards; /* Apply the welcome transition */
+}
+
+.hero-text p.description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    animation: slideUp 1s ease-in-out forwards; /* Adds a sliding up effect */
+}
+
+/* Welcome Transition - Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Text Slide Up Animation */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px); /* Starts from below */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Ends at normal position */
+        opacity: 1;
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    flex-grow: 1; /* Fills up remaining space */
+    margin-top: 20px; /* Space between description and skills */
+    margin-bottom: 10px; /* Keeps distance from footer */
+}
+
+.skills-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards 1s; /* Delayed fade-in for the heading */
+}
+
+/* Skill Card Fade-in and Staggered Animation */
+.skill-card {
+    margin-bottom: 20px; /* Adds space between cards */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start below its position */
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: calc(0.2s * var(--card-index)); /* Staggered animation delay */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Starts from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+.skill-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: #007bff;
+}
+
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+    .hero-text p.description {
+        font-size: 1.2rem;
+    }
+
+    .skill-card {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* General page settings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Animation */
+nav.navbar {
+    opacity: 0;
+    transform: translateY(-50px); /* Start from above */
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start from above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+/* Section Animation */
+.container-fluid {
+    opacity: 0;
+    transform: translateY(50px); /* Start from below */
+    animation: fadeInUp 1s ease-out forwards 0.5s; /* Delayed animation */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeInSmooth 1.5s ease-in-out forwards;
+}
+
+/* Smooth fade-in keyframes */
+@keyframes fadeInSmooth {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Small vertical movement for a smooth effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hover scaling effect on skill cards */
+.scale-on-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Text pulse effect for skill titles */
+.text-animate {
+    position: relative;
+    animation: textPulse 2s infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% { color: #007bff; }
+    50% { color: #ff6b6b; }
+}
+
+
+/* Skills Section */
+.skills-section {
+    padding: 2rem 0;
+    background-color: #2e3047; /* Dark background similar to the image */
+    color: #fff;
+}
+
+/* Skill Icons */
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+/* Skill Cards */
+.skill-card {
+    background-color: #393b56; /* Card background color */
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.skill-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Horizontal Line */
+.hr-line {
+    width: 50%;
+    margin: 0 auto;
+    border: 0;
+    border-top: 2px solid #fff;
+    margin-bottom: 2rem;
+}
+.skill-icon {
+    font-size: 64px; /* Adjust size */
+    color: #fff; /* Change icon color to white */
+    margin-bottom: 10px;
+}
+
+
+/* General container settings */
+.special {
+    min-height: 100%; /* Ensures it takes up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensures no overflow of content */
+}
+
+/* Centering the hero description text */
+.hero-text {
+    text-align: center;
+    margin-top: 20px;
+    flex-grow: 1; /* Ensures it takes available space */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-out forwards; /* Apply the welcome transition */
+}
+
+.hero-text p.description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    animation: slideUp 1s ease-in-out forwards; /* Adds a sliding up effect */
+}
+
+/* Welcome Transition - Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Text Slide Up Animation */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px); /* Starts from below */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Ends at normal position */
+        opacity: 1;
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    flex-grow: 1; /* Fills up remaining space */
+    margin-top: 20px; /* Space between description and skills */
+    margin-bottom: 10px; /* Keeps distance from footer */
+}
+
+.skills-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards 1s; /* Delayed fade-in for the heading */
+}
+
+/* Skill Card Fade-in and Staggered Animation */
+.skill-card {
+    margin-bottom: 20px; /* Adds space between cards */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start below its position */
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: calc(0.2s * var(--card-index)); /* Staggered animation delay */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Starts from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+.skill-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: #007bff;
+}
+
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+    .hero-text p.description {
+        font-size: 1.2rem;
+    }
+
+    .skill-card {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* General page settings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Animation */
+nav.navbar {
+    opacity: 0;
+    transform: translateY(-50px); /* Start from above */
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start from above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+/* Section Animation */
+.container-fluid {
+    opacity: 0;
+    transform: translateY(50px); /* Start from below */
+    animation: fadeInUp 1s ease-out forwards 0.5s; /* Delayed animation */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeInSmooth 1.5s ease-in-out forwards;
+}
+
+/* Smooth fade-in keyframes */
+@keyframes fadeInSmooth {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Small vertical movement for a smooth effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hover scaling effect on skill cards */
+.scale-on-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Text pulse effect for skill titles */
+.text-animate {
+    position: relative;
+    animation: textPulse 2s infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% { color: #007bff; }
+    50% { color: #ff6b6b; }
+}
+
+
+/* Skills Section */
+.skills-section {
+    padding: 2rem 0;
+    background-color: #2e3047; /* Dark background similar to the image */
+    color: #fff;
+}
+
+/* Skill Icons */
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+/* Skill Cards */
+.skill-card {
+    background-color: #393b56; /* Card background color */
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.skill-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Horizontal Line */
+.hr-line {
+    width: 50%;
+    margin: 0 auto;
+    border: 0;
+    border-top: 2px solid #fff;
+    margin-bottom: 2rem;
+}
+.skill-icon {
+    font-size: 64px; /* Adjust size */
+    color: #fff; /* Change icon color to white */
+    margin-bottom: 10px;
+}
+
+
+/* Ensure that the images in project cards are responsive */
+.card-img-top {
+    width: 100%;  /* Make image take full width of the card */
+    height: 200px;  /* Fixed height for all project images */
+    object-fit: cover; /* Maintain aspect ratio while filling the area */
+}
+
+/* Additional styles for card text and buttons */
+.card-title {
+    font-size: 1.25rem; /* Adjust title font size */
+}
+
+.card-text {
+    font-size: 1rem; /* Adjust description font size */
+}
+
+/* Skills list adjustments */
+.list-inline-item {
+    font-size: 0.9rem; /* Smaller font for skills */
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.1rem; /* Smaller title on small screens */
+    }
+
+    .card-text {
+        font-size: 0.9rem; /* Smaller description on small screens */
+    }
+
+    .list-inline-item {
+        font-size: 0.8rem; /* Even smaller skills font on small screens */
+    }
+}
+
+
+.square-box {
+    width: 250px;  /* Full width of the card */
+    height: 250px; /* Fixed height for square box */
+    overflow: hidden; /* Hide overflow to maintain square shape */
+}
+
+.square-box img {
+    width: 100%;  /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+
+.square-box {
+    width: 100%;  /* Full width of the card */
+    height: 200px; /* Fixed height for square box */
+    display: flex;  /* Center icon */
+    justify-content: center;  /* Center icon horizontally */
+    align-items: center;  /* Center icon vertically */
+    overflow: hidden; /* Hide overflow to maintain square shape */
+}
+
+.square-box i {
+    /* Additional styling for icons if necessary */
+}
