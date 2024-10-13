@@ -1,38 +1,67 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-Home
+Welcome to My Journey
 {% endblock %}
 
 {% block section %}
-<div class="container-fluid special d-flex flex-column">
-    <!-- Centered Description Section -->
-    <section class="hero-text text-center flex-grow-1">
-        <p class="description">
-            My name is Aditya Narayan Jena, a third-year student based in Bhubaneswar, Odisha, India.
-            I am a student with research potential, and I have completed several projects.
+<div class="container-fluid special d-flex flex-column align-items-center">
+    <!-- Hero Section with Personal Tagline and Animation -->
+    <section class="hero-text text-center flex-grow-1 fade-in">
+        <p class="description fs-4 fw-light">
+            Hey there! I'm <span class="fw-bold text-gradient">Aditya Narayan Jena</span>, a third-year student passionate about research and innovation, hailing from the vibrant city of Bhubaneswar, Odisha.
+            Embark on a journey of exploration with me as I showcase the projects I've completed and the skills I've honed over time!
         </p>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills-section flex-grow-1">
-        <h2 class="text-center position-relative">
-        <hr class="hr-line-left">
-        Skills Acquired
-        <hr class="hr-line-right">
-        </h2>
+    <!-- Skills Section with Dynamic Layout and Hover Effects -->
+    <section class="skills-section text-center">
+    <h2 class="fw-bold">Skills Acquired</h2>
+    <hr class="hr-line">
 
-        <div class="row justify-content-center">
-            {% for skill in skills %}
-            <div class="col-md-4" style="--card-index: {{ loop.index0 }}">
-                <div class="card skill-card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ skill }}</h5>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+    <div class="row justify-content-center">
+        <div class="col-md-2 skill-card">
+            <i class="fab fa-python skill-icon"></i>
+            <p>Python</p>
         </div>
-    </section>
+        <div class="col-md-2 skill-card">
+            <i class="fas fa-robot skill-icon"></i>
+            <p>Machine Learning</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fab fa-html5 skill-icon"></i>
+            <p>HTML</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fab fa-css3-alt skill-icon"></i>
+            <p>CSS</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fab fa-java skill-icon"></i>
+            <p>Java</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fab fa-cuttlefish skill-icon"></i> <!-- C++ icon is not standard, using cuttlefish as a placeholder -->
+            <p>C++</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fas fa-database skill-icon"></i>
+            <p>SQL</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fab fa-python skill-icon"></i> <!-- Python Pandas icon is not standard, using Python icon as a placeholder -->
+            <p>Python Pandas</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fab fa-python skill-icon"></i> <!-- Python NumPy icon is not standard, using Python icon as a placeholder -->
+            <p>Python NumPy</p>
+        </div>
+        <div class="col-md-2 skill-card">
+            <i class="fas fa-brain skill-icon"></i> <!-- Placeholder for Gen AI -->
+            <p>Gen AI</p>
+        </div>
+    </div>
+</section>
+
 </div>
 {% endblock %}
